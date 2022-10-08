@@ -16,9 +16,3 @@ html,body{
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-
-.twitterLogo{
-  display: "table-cell";
-  max-width: '38px';
-  margin: '0px 12px -8px 0px';
-}
