@@ -1,7 +1,10 @@
 html,body{
   height: 100%;
   width: 100%;
-  margin: 0px;
+  margin: 16px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: rgb(231 246 255);
+  backdrop-filter: blur(5px);
 }
 
 .scrollbar::-webkit-scrollbar {
@@ -12,4 +15,10 @@ html,body{
 .scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+.twitterLogo{
+  display: "table-cell";
+  max-width: '38px';
+  margin: '0px 12px -8px 0px';
 }

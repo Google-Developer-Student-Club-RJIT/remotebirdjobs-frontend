@@ -39,7 +39,13 @@ export default function TweetContainer() {
 
     return (
         <div>
-            <h1 className="text-3xl font-bold text-center underline m-5">Tweets</h1>
+            <div style={{textAlign: "center"}}>
+                <div style = {{ display: "inline-table"}} >
+                    <img style = {{ display: "table-cell", maxWidth: '38px', margin: '0px 12px -8px 0px'}} src="https://www.freepnglogos.com/uploads/twitter-logo-png/twitter-logo-vector-png-clipart-1.png" alt='twitter_logo' />
+                    <h1 style = {{ display: "table-cell"}} className="text-3xl font-bold text-center underline m-5">Tweets</h1>
+                </div>
+            </div>
+
             {loading && <Spinner />}
             <InfiniteScroll
                 dataLength={tweet.length}
