@@ -1,70 +1,112 @@
 # remotebirdjobs-frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div align="center">
 
-## Available Scripts
+[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://github.com/Google-Developer-Student-Club-RJIT/remotebirdjobs-frontend)&nbsp;
+[![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg?style=flat&logo=github)](https://github.com/Google-Developer-Student-Club-RJIT/remotebirdjobs-frontend)&nbsp;
+![contributions welcome](https://img.shields.io/static/v1.svg?label=Contributions&message=Welcome&color=brightgreen&style=flat&logo=github)&nbsp;
+[![first-timers-only](https://img.shields.io/badge/first--timers--only-friendly-blue.svg?style=flat)](https://github.com/Google-Developer-Student-Club-RJIT/remotebirdjobs-frontend)&nbsp;
+[![GitHub stars](https://img.shields.io/github/stars/Google-Developer-Student-Club-RJIT/remotebirdjobs-frontend)](https://github.com/Google-Developer-Student-Club-RJIT/remotebirdjobs-frontend/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/Google-Developer-Student-Club-RJIT/remotebirdjobs-frontend)](https://github.com/Google-Developer-Student-Club-RJIT/remotebirdjobs-frontend/network/members)
+[![GitHub Contributers](https://img.shields.io/github/contributors/Google-Developer-Student-Club-RJIT/remotebirdjobs-frontend)](https://github.com/Google-Developer-Student-Club-RJIT/remotebirdjobs-frontend/graphs/contributors)
+[![GitHub issues](https://img.shields.io/github/issues/Google-Developer-Student-Club-RJIT/remotebirdjobs-frontend)](https://github.com/Google-Developer-Student-Club-RJIT/remotebirdjobs-frontend/issues)
+[![GitHub pull-requests](https://img.shields.io/github/issues-pr/Google-Developer-Student-Club-RJIT/remotebirdjobs-frontend)](https://github.com/Google-Developer-Student-Club-RJIT/remotebirdjobs-frontend/pulls)
+[![GitHub closed-issues](https://img.shields.io/github/issues-closed-raw/Google-Developer-Student-Club-RJIT/remotebirdjobs-frontend)](https://github.com/Google-Developer-Student-Club-RJIT/remotebirdjobs-frontend/pulls)
+[![GitHub closed-prs](https://img.shields.io/github/issues-pr-closed-raw/Google-Developer-Student-Club-RJIT/remotebirdjobs-frontend)](https://github.com/Google-Developer-Student-Club-RJIT/remotebirdjobs-frontend/pulls)
 
-In the project directory, you can run:
+</div>
 
-### `npm start`
+## Tech-Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<br>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![Django](https://img.shields.io/badge/-Django-092E20?style=plastic&logo=Django)
+![Python](https://img.shields.io/badge/-Python-8fcfd1?style=plastic&logo=Python)
 
-### `npm test`
+## About the Project
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This project is a part of the Hacktoberfest in behalf of Google Developer Student Club's RJIT. The project is made using ReactJS.
 
-### `npm run build`
+Remotebirdjobs is a website where anyone around the world can find his preferable job which have been posted on twitter.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Getting Started
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To get started please follow the below cammands:
+```
+npm i
+npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 📌Contributing Guidelines :
+<br>
+<h3>First read CONTRIBUTING.md</h3>
 
-### `npm run eject`
+### Do not make a PR without getting the issues assigned. Read Rules Carefully!
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+*1.* Fork [this](https://github.com/Google-Developer-Student-Club-RJIT/remotebirdjobs-frontend) repository.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+*2.* Clone your forked copy of the project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```
+git clone https://github.com/<your_name>/remotebirdjobs-frontend.git
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+*3.* Navigate to the project directory :file_folder: .
 
-## Learn More
+```
+cd remotebirdjobs-frontend
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+*4.* Add a reference(remote) to the original repository.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+git remote add upstream https://github.com/Google-Developer-Student-Club-RJIT/remotebirdjobs-frontend.git
+```
 
-### Code Splitting
+*5.* Check the remotes for this repository.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+git remote -v
+```
 
-### Analyzing the Bundle Size
+*6.* Always take a pull from the upstream repository to your master branch to keep it at par with the main project(updated repository).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```
+git pull upstream main
+```
 
-### Making a Progressive Web App
+*7.* Create a new branch.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```
+git checkout -b <your_branch_name>
+```
 
-### Advanced Configuration
+*8.* Perfom your desired changes to the code base and track your changes:heavy_check_mark: .
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```
+git add .
+```
 
-### Deployment
+*9.* Commit your changes .
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```
+git commit -m "Relevant message"
+```
 
-### `npm run build` fails to minify
+*10.* Push the committed changes in your feature branch to your remote repo.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+git push -u origin <your_branch_name>
+```
+
+*11.* To create a pull request, click on `compare and pull requests`. Please ensure you compare your feature branch to the desired branch of the repo you are suppose to make a PR to.
+
+*12.* Add appropriate title and description to your pull request explaining your changes and efforts done. Always make sure you have pulled the latest code from the main branch before making a PR.
+
+*13.* Click on `Create Pull Request`.
+
+*14.* Hurray ❗ You have created a PR to the remotebirdjobs-frontend 💥 . Sit back patiently and relax till then the project maintainers will review your PR. Please understand, there will be some time taken to review a PR and can vary from a few hours to a few days too so be Patient and keep contributing.
+
+
+
+
