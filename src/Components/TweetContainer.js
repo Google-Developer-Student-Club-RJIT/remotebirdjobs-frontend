@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Tweet from "./Tweet"
 import Spinner from './Spinner'
 import InfiniteScroll from 'react-infinite-scroll-component';
+import logo from "../logo.png"
 
 export default function TweetContainer(props) {
     let {form}=props;
@@ -39,10 +40,10 @@ export default function TweetContainer(props) {
 
     return (
         <div>
-            <div style={{textAlign: "center"}}>
-                <div style = {{ display: "inline-table"}} >
-                    <img style = {{ display: "table-cell", maxWidth: '38px', margin: '0px 12px -8px 0px'}} src="https://www.freepnglogos.com/uploads/twitter-logo-png/twitter-logo-vector-png-clipart-1.png" alt='twitter_logo' />
-                    <h1 style = {{ display: "table-cell"}}className="text-center m-3"><u>Tweets</u></h1>
+            <div className='text-center'>
+                <div className='row d-flex justify-content-center'>
+                    <img className="col-auto my-3 mx-0" style = {{borderRadius:"50%",width:"5%"}} src={logo} alt='logo'/>
+                    <h1 className="col-auto my-3 mx-0 px-0"><u>Tweets</u></h1>
                 </div>
             </div>
             {loading && <Spinner />}
