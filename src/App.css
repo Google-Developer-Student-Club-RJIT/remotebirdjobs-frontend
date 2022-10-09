@@ -1,13 +1,6 @@
-html,body{
-  height: 100%;
-  width: 100%;
-  margin: 0px;
-}
-
 .scrollbar::-webkit-scrollbar {
   display: none;
 }
-
 
 .scrollbar {
   -ms-overflow-style: none;
