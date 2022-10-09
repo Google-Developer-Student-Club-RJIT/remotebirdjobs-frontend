@@ -1,34 +1,31 @@
 import './App.css';
 import Navbar from './Components/Navbar';
 import TweetContainer from './Components/TweetContainer.js';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+
 
 function App() {
-  
+
+  let date = new Date().toJSON().slice(0, 10)
   const [form, SetForm] = useState({
-    topic:"ReactJs",type:"Both",startDate:"2022-09-08",endDate:"2022-10-08"
+    topic: "ReactJs", type: "false", startDate: "2022-09-08", endDate: date
   });
-  
+
   let key, value;
+  useEffect(() => {
+    
+  }, [form])
 
   const handleForm = (e) => {
     key = e.target.name
     value = e.target.value
     SetForm({ ...form, [key]: value })
+    console.log(form)
   }
-  
-  const handleSubmit = async (event) => {
-    const formData = {
-        topic: form.topic,
-        type: form.type,
-        startDate: form.startDate,
-        endDate: form.endDate,
-    }
-    console.log(formData)
-}
+
   return (
     <>
-      <Navbar handleForm={handleForm} form={form} handleSubmit={handleSubmit}></Navbar>
+      <Navbar handleForm={handleForm} form={form}></Navbar>
       <TweetContainer form={form}></TweetContainer>
     </>
   );
