@@ -3,15 +3,15 @@ import Tweet from "./Tweet"
 import Spinner from './Spinner'
 import InfiniteScroll from 'react-infinite-scroll-component';
 
-export default function TweetContainer() {
-
+export default function TweetContainer(props) {
+    let {form}=props;
     const [tweet, setTweet] = useState([])
     const [loading, setLoading] = useState([true]);
     const [page, setPage] = useState(1)
 
     const loadTweets = async () => {
         const headers = { 'Content-Type': 'application/json' }
-        let url = `https://remotebirdjobs-api.herokuapp.com/search/?search=reactjs&start_date=2022-10-01&end_date=2022-10-06&page=${page}&pagesize=12`
+        let url = `https://remotebirdjobs-api.herokuapp.com/search/?search=${form.topic}&start_date=${form.startDate}&end_date=${form.endDate}&page=${page}&pagesize=12`
         fetch(url, { headers })
             .then(response => response.json())
             .then(data => setTweet(data))
@@ -39,7 +39,12 @@ export default function TweetContainer() {
 
     return (
         <div>
-            <h1 className="text-center m-3"><u>Tweets</u></h1>
+            <div style={{textAlign: "center"}}>
+                <div style = {{ display: "inline-table"}} >
+                    <img style = {{ display: "table-cell", maxWidth: '38px', margin: '0px 12px -8px 0px'}} src="https://www.freepnglogos.com/uploads/twitter-logo-png/twitter-logo-vector-png-clipart-1.png" alt='twitter_logo' />
+                    <h1 style = {{ display: "table-cell"}}className="text-center m-3"><u>Tweets</u></h1>
+                </div>
+            </div>
             {loading && <Spinner />}
             <InfiniteScroll
                 dataLength={tweet.length}
