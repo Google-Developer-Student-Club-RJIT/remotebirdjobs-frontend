@@ -42,10 +42,9 @@ export default function TweetContainer() {
             <div style={{textAlign: "center"}}>
                 <div style = {{ display: "inline-table"}} >
                     <img style = {{ display: "table-cell", maxWidth: '38px', margin: '0px 12px -8px 0px'}} src="https://www.freepnglogos.com/uploads/twitter-logo-png/twitter-logo-vector-png-clipart-1.png" alt='twitter_logo' />
-                    <h1 style = {{ display: "table-cell"}} className="text-3xl font-bold text-center underline m-5">Tweets</h1>
+                    <h1 style = {{ display: "table-cell"}}className="text-center m-3"><u>Tweets</u></h1>
                 </div>
             </div>
-
             {loading && <Spinner />}
             <InfiniteScroll
                 dataLength={tweet.length}
@@ -56,13 +55,13 @@ export default function TweetContainer() {
                       Yay!!! You have seen it all
                     </h3>
                   }
-                loader={<Spinner />
+                loader={<Spinner/>
                 }>
 
-                <div id='container' className='p-3 flex flex-wrap'>
+                <div id='container' className='d-flex flex-wrap align-items-center p-3'>
                     {tweet.map((element) => {
                         return (
-                            <div key={element.id} className='w-1/3 px-5 my-3 h-96 overflow-auto scrollbar'>
+                            <div key={element.id} className='my-3 px-3 overflow-auto scrollbar' style={{width:"33%",height:"50vh"}}>
                                 <Tweet id={element.id}></Tweet>
                             </div>
                         )
