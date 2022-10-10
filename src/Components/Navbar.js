@@ -1,7 +1,7 @@
 import React from 'react'
 const Navbar = (props) => {
     let { form, handleForm } = props;
-    let topics=["ReactJS","Django","Python","C++","Javascript"];
+    let topics=["ReactJS","Django","Python","C++","Javascript","Java","Spring","MERN","NodeJS","Angular","Blockchain"];
     return (
         <header className="navbar navbar-dark p-3 px-4 navbar-expand-lg bg-dark">
             <div className="container-fluid">
