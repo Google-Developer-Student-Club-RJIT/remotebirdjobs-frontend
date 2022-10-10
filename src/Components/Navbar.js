@@ -1,6 +1,10 @@
 import React from 'react'
+import TextField from '@mui/material/TextField';
+import Autocomplete from '@mui/material/Autocomplete';
 const Navbar = (props) => {
     let { form, handleForm } = props;
+    const topics =['ReactJS', 'Django', 'Python', 'C++', 'Javascript', 'Java', 'Spring', 'MERN', 'NodeJS' ];
+    const [inputValue, setInputValue] = React.useState('');
     return (
         <header className="navbar navbar-dark p-3 px-4 navbar-expand-lg bg-dark">
             <div className="container-fluid">
@@ -11,17 +15,20 @@ const Navbar = (props) => {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <div className="d-flex">
                         <div className="form-group mx-3 row">
-                            <label htmlFor="Topic" className=' w-auto text-white text-center col-auto my-auto'>Topic</label>
-                            <select id="Topic" className="w-auto form-control col-auto my-auto"
-                                name='topic'
-                                value={form.topic}
-                                onChange={handleForm}>
-                                <option>ReactJs</option>
-                                <option>Django</option>
-                                <option>Python</option>
-                                <option>C++</option>
-                                <option>Javascript</option>
-                            </select>
+                            <Autocomplete
+                            name='topic'
+                            inputValue={inputValue}
+                            onInputChange={(event, newInputValue) => {
+                            setInputValue(newInputValue);
+                            form.topic=newInputValue? newInputValue: inputValue;
+                            handleForm(event);
+                            }}
+                            disablePortal
+                            id="Topic"
+                            options={topics}
+                            sx={{ width: 300 , bgcolor: 'white', padding: '0px', borderRadius: '5px' }}
+                            renderInput={(params) => <TextField {...params} label="Topic" />}
+                            />
                         </div>
                         <div className="form-group mx-3 row">
                             <label htmlFor="type" className='w-auto text-white col-auto my-auto'>Work From Home</label>
