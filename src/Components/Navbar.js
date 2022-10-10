@@ -1,6 +1,7 @@
 import React from 'react'
 const Navbar = (props) => {
     let { form, handleForm } = props;
+    let topics=["ReactJS","Django","Python","C++","Javascript"];
     return (
         <header className="navbar navbar-dark p-3 px-4 navbar-expand-lg bg-dark">
             <div className="container-fluid">
@@ -16,11 +17,10 @@ const Navbar = (props) => {
                                 name='topic'
                                 value={form.topic}
                                 onChange={handleForm}>
-                                <option>ReactJs</option>
-                                <option>Django</option>
-                                <option>Python</option>
-                                <option>C++</option>
-                                <option>Javascript</option>
+                                {topics.map((topic,index)=>(
+                                    <option key={index}>{topic}</option>
+                                    )
+                                )}
                             </select>
                         </div>
                         <div className="form-group mx-3 row">
