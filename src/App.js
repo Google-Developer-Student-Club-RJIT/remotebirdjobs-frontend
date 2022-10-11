@@ -10,23 +10,27 @@ function App() {
   const [form, SetForm] = useState({
     topic: "ReactJs", type: "false", startDate: "2022-09-08", endDate: date
   });
-
+  const [loading, setLoading] = useState([false]);
   let key, value;
   useEffect(() => {
-    
+
   }, [form])
 
   const handleForm = (e) => {
     key = e.target.name
     value = e.target.value
     SetForm({ ...form, [key]: value })
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+    }, 11000);
     console.log(form)
   }
 
   return (
     <>
       <Navbar handleForm={handleForm} form={form}></Navbar>
-      <TweetContainer form={form}></TweetContainer>
+      <TweetContainer form={form} loading={loading} setLoading={setLoading}></TweetContainer>
     </>
   );
 }

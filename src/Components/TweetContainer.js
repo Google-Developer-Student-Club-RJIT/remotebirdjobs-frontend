@@ -5,9 +5,10 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 import logo from '../logo.png';
 
 export default function TweetContainer(props) {
-  let { form } = props;
+  let { form, loading, setLoading } = props;
   const [tweet, setTweet] = useState([]);
   const [page, setPage] = useState(1);
+
 
   const loadTweets = async () => {
     const headers = { 'Content-Type': 'application/json' };
@@ -20,6 +21,9 @@ export default function TweetContainer(props) {
       });
   };
   useEffect(() => {
+    setTimeout(() => {
+      setLoading(false)
+    }, 10000);
     loadTweets();
     // eslint-disable-next-line
   }, [form]);
@@ -27,11 +31,7 @@ export default function TweetContainer(props) {
   const fetchMoreData = async () => {
     setPage(page + 1);
     const headers = { 'Content-Type': 'application/json' };
-    let url = `https://remotebirdjobs-api.herokuapp.com/search/?search=${
-      form.topic
-    }&start_date=${form.startDate}&end_date=${form.endDate}&page=${
-      page + 1
-    }&wfh=${form.type === 'wfh' ? 'true' : 'false'}&pagesize=12`;
+    let url = `https://remotebirdjobs-api.herokuapp.com/search/?search=${form.topic}&start_date=${form.startDate}&end_date=${form.endDate}&page=${page + 1}&wfh=${form.type === 'wfh' ? 'true' : 'false'}&pagesize=12`;
     fetch(url, { headers })
       .then((response) => response.json())
       .then((data) => setTweet(tweet.concat(data)))
@@ -55,6 +55,7 @@ export default function TweetContainer(props) {
           </h1>
         </div>
       </div>
+      {loading && <Spinner />}
       <InfiniteScroll
         dataLength={tweet.length}
         next={fetchMoreData}
@@ -64,9 +65,7 @@ export default function TweetContainer(props) {
         }
         loader={<Spinner />}
       >
-        <div
-          id='container'
-          className='d-flex flex-wrap align-items-center justify-content-space-between px-5 col'
+        <div id='container' className='d-flex flex-wrap align-items-center justify-content-space-between px-5 col min-vh-100'
         >
           {tweet.map((element) => {
             return (
