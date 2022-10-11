@@ -111,5 +111,16 @@ git push -u origin <your_branch_name>
 *14.* Hurray ❗ You have created a PR to the remotebirdjobs-frontend 💥 . Sit back patiently and relax till then the project maintainers will review your PR. Please understand, there will be some time taken to review a PR and can vary from a few hours to a few days too so be Patient and keep contributing.
 
 
+## Our Contributors
+
+<a href="https://github.com/Google-Developer-Student-Club-RJIT/remotebirdjobs-frontend/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Google-Developer-Student-Club-RJIT/remotebirdjobs-frontend" />
+</a>
+
+<br>
+<div align="center">
+Copyright © 2022
+</div>
+
 
 
