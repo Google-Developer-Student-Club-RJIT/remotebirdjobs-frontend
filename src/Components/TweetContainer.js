@@ -41,7 +41,7 @@ export default function TweetContainer(props) {
   };
 
   return (
-    <div>
+    <>
       <div className="text-center">
         <div className="row d-flex justify-content-center mx-0">
           <img
@@ -77,6 +77,6 @@ export default function TweetContainer(props) {
           })}
         </div>
       </InfiniteScroll>
-    </div>
+    </>
   );
 }
