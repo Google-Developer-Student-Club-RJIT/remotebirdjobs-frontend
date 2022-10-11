@@ -65,10 +65,10 @@ export default function TweetContainer(props) {
                 loader={<Spinner />
                 }>
 
-                <div id='container' className='d-flex flex-wrap align-items-center justify-content-space-between px-5 col'>
+                <div id='container' className='tweets-wrapper px-4 md:px-5'>
                     {tweet.map((element) => {
                         return (
-                            <div key={element.id} className='m-3 mx-auto p-0 overflow-auto scrollbar' style={{ width: "22%", height: "25vh", borderRadius: "12px" }}>
+                            <div key={element.id} className='p-0 overflow-auto scrollbar tweet-item'>
                                 <Tweet id={element.id} className="p-0"></Tweet>
                             </div>
                         )

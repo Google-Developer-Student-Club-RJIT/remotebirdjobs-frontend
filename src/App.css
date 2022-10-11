@@ -6,3 +6,22 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+.tweets-wrapper{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  grid-gap: 1.5rem;
+}
+
+.tweet-item{
+   height: fit-content;
+   max-height:10rem; 
+   border-radius: 12px;
+}
+
+
+@media only screen and (max-width:678px){
+  .tweet-item{
+    max-height:15rem;
+  }
+}
