@@ -4,7 +4,7 @@ import Autocomplete from '@mui/material/Autocomplete';
 const Navbar = (props) => {
     let { form, handleForm } = props;
     const topics =['Android','C','CSS','Clojure','Cofeescript','Cpp','Crystal','Django','Elixir','Go','Java','JavaScript','Julia','Kotlin','Linux','MERN','NodeJS','PHP','Powershell','Python','ReactJS','Roslyn','Ruby','Rust','Scala','Spring','Swift','TypeScript']
-    const [inputValue, setInputValue] = React.useState('ReactJS');
+    const [value, setValue] = React.useState('ReactJS');
     return (
         <header className="navbar navbar-dark p-3 px-4 navbar-expand-lg bg-dark">
             <div className="container-fluid">
@@ -17,15 +17,13 @@ const Navbar = (props) => {
                         <div className="form-group mx-3 row">
                             <Autocomplete
                             name='topic'
-                            inputValue={inputValue}
-                            value={inputValue}
-                             onInputChange={(event, newInputValue) => {
-                             setInputValue(newInputValue);
-                             form.topic=newInputValue? newInputValue: inputValue;
+                            value={value}
+                             onChange={(event, newValue) => {
+                             setValue(newValue);
+                             form.topic=newValue;
                              handleForm(event);
                              }}
                             disableClearable
-                            disablePortal
                             id="Topic"
                             options={topics}
                             sx={{ width: 300 , bgcolor: 'white', padding: '0px', borderRadius: '5px' }}
