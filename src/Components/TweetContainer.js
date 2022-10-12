@@ -5,9 +5,10 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import logo from "../logo.png";
 
 export default function TweetContainer(props) {
-  let { form } = props;
+  let { form, loading, setLoading } = props;
   const [tweet, setTweet] = useState([]);
   const [page, setPage] = useState(1);
+
 
   const loadTweets = async () => {
     const headers = { "Content-Type": "application/json" };
@@ -20,18 +21,17 @@ export default function TweetContainer(props) {
       });
   };
   useEffect(() => {
+    setTimeout(() => {
+      setLoading(false)
+    }, 10000);
     loadTweets();
     // eslint-disable-next-line
   }, [form]);
 
   const fetchMoreData = async () => {
     setPage(page + 1);
-    const headers = { "Content-Type": "application/json" };
-    let url = `https://remotebirdjobs-api.herokuapp.com/search/?search=${
-      form.topic
-    }&start_date=${form.startDate}&end_date=${form.endDate}&page=${
-      page + 1
-    }&wfh=${form.type === "wfh" ? "true" : "false"}&pagesize=12`;
+    const headers = { 'Content-Type': 'application/json' };
+    let url = `https://remotebirdjobs-api.herokuapp.com/search/?search=${form.topic}&start_date=${form.startDate}&end_date=${form.endDate}&page=${page + 1}&wfh=${form.type === 'wfh' ? 'true' : 'false'}&pagesize=12`;
     fetch(url, { headers })
       .then((response) => response.json())
       .then((data) => setTweet(tweet.concat(data)))
@@ -55,6 +55,7 @@ export default function TweetContainer(props) {
           </h1>
         </div>
       </div>
+      {loading && <Spinner />}
       <InfiniteScroll
         dataLength={tweet.length}
         next={fetchMoreData}
@@ -69,7 +70,8 @@ export default function TweetContainer(props) {
             return (
               <div
                 key={element.id}
-                className="p-0 overflow-auto scrollbar tweet-item"
+                className="p-0 overflow-auto scrollbar"
+                style={{  height: '25vh', borderRadius: '12px' }}
               >
                 <Tweet id={element.id} className="p-0"></Tweet>
               </div>
