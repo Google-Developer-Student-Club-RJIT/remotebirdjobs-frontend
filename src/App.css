@@ -9,19 +9,23 @@
 
 .tweets-wrapper{
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   grid-gap: 1.5rem;
 }
 
-.tweet-item{
-   height: fit-content;
-   max-height:10rem; 
-   border-radius: 12px;
+@media only screen and (max-width:1024px){
+  .tweets-wrapper{
+     grid-template-columns: repeat(3, 1fr);
+   }
 }
 
-
-@media only screen and (max-width:678px){
-  .tweet-item{
-    max-height:15rem;
+@media only screen and (max-width:876px){
+  .tweets-wrapper{
+     grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (max-width:568px){
+ .tweets-wrapper{
+    grid-template-columns: repeat(1, 1fr);
   }
 }
