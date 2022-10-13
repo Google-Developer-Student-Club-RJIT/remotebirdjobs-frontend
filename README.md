@@ -110,6 +110,17 @@ git push -u origin <your_branch_name>
 
 *14.* Hurray ❗ You have created a PR to the remotebirdjobs-frontend 💥 . Sit back patiently and relax till then the project maintainers will review your PR. Please understand, there will be some time taken to review a PR and can vary from a few hours to a few days too so be Patient and keep contributing.
 
+For any changes regarding the UI please follow the Figma link below!
+https://www.figma.com/file/m61XtL5xq5ZL6mgOI4J1eF/Untitled?node-id=1%3A3
+
+<br>
+
+Or follow this:
+<img align="right" alt="UI" src="Remote Bird Jobs-UI/Web-UI.png"/>
+
+<br>
+<br>
+
 
 ## Our Contributors
 
