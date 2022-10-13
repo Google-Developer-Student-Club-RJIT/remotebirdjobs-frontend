@@ -16,16 +16,21 @@ export default function TweetContainer(props) {
     fetch(url, { headers })
       .then((response) => response.json())
       .then((data) => {
-        setTweets((prev) => [...prev, ...data]);
+        setTweets((prev) =>
+          // removing duplicates
+          [...prev, ...data].filter(
+            (t, i, arr) => arr.findIndex((v) => v.id === t.id) === i
+          )
+        );
         setHasMore(data.length === 12);
       })
       .catch((err) => {
         console.log("Error => ", err);
-        alert("Some error occured while getting tweets");
       });
   }, [form, page]);
 
   useEffect(() => {
+    setHasMore(true);
     setTweets([]);
     setPage(1);
   }, [form]);
