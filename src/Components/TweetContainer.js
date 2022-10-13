@@ -1,44 +1,43 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Tweet from "./Tweet";
 import Spinner from "./Spinner";
 import InfiniteScroll from "react-infinite-scroll-component";
 import logo from "../logo.png";
 
 export default function TweetContainer(props) {
-  let { form, loading, setLoading } = props;
-  const [tweet, setTweet] = useState([]);
+  let { form } = props;
+  const [tweets, setTweets] = useState([]);
   const [page, setPage] = useState(1);
+  const [hasMore, setHasMore] = useState(true);
 
-
-  const loadTweets = async () => {
+  const loadTweets = useCallback(async () => {
     const headers = { "Content-Type": "application/json" };
     let url = `https://remotebirdjobs-api.herokuapp.com/search/?search=${form.topic}&start_date=${form.startDate}&end_date=${form.endDate}&page=${page}&wfh=${form.type}&pagesize=12`;
     fetch(url, { headers })
       .then((response) => response.json())
-      .then((data) => setTweet(data))
+      .then((data) => {
+        setTweets((prev) =>
+          // removing duplicates
+          [...prev, ...data].filter(
+            (t, i, arr) => arr.findIndex((v) => v.id === t.id) === i
+          )
+        );
+        setHasMore(data.length === 12);
+      })
       .catch((err) => {
         console.log("Error => ", err);
       });
-  };
+  }, [form, page]);
+
   useEffect(() => {
-    setTimeout(() => {
-      setLoading(false)
-    }, 10000);
-    loadTweets();
-    // eslint-disable-next-line
+    setHasMore(true);
+    setTweets([]);
+    setPage(1);
   }, [form]);
 
-  const fetchMoreData = async () => {
-    setPage(page + 1);
-    const headers = { 'Content-Type': 'application/json' };
-    let url = `https://remotebirdjobs-api.herokuapp.com/search/?search=${form.topic}&start_date=${form.startDate}&end_date=${form.endDate}&page=${page + 1}&wfh=${form.type === 'wfh' ? 'true' : 'false'}&pagesize=12`;
-    fetch(url, { headers })
-      .then((response) => response.json())
-      .then((data) => setTweet(tweet.concat(data)))
-      .catch((err) => {
-        console.log("Error => ", err);
-      });
-  };
+  useEffect(() => {
+    loadTweets();
+  }, [page, loadTweets]);
 
   return (
     <>
@@ -55,29 +54,33 @@ export default function TweetContainer(props) {
           </h1>
         </div>
       </div>
-      {loading && <Spinner />}
+
       <InfiniteScroll
-        dataLength={tweet.length}
-        next={fetchMoreData}
-        hasMore={tweet.length <= 47}
+        dataLength={tweets.length}
+        next={() => setPage((prev) => prev + 1)}
+        hasMore={hasMore}
         endMessage={
-          <h3 className="text-center">Yay!!! You have seen it all</h3>
+          <h3 className="w-100 fw-normal text-secondary mt-5 text-center">
+            {tweets.length && !hasMore
+              ? "Yay!!! You have seen it all"
+              : "Your search did not return any results"}
+          </h3>
         }
         loader={<Spinner />}
+        id="container"
+        className="d-flex flex-wrap align-items-center justify-content-space-between px-5 col"
       >
-        <div id="container" className="tweets-wrapper px-4 md:px-5">
-          {tweet.map((element) => {
-            return (
-              <div
-                key={element.id}
-                className="p-0 overflow-auto scrollbar"
-                style={{  height: '25vh', borderRadius: '12px' }}
-              >
-                <Tweet id={element.id} className="p-0"></Tweet>
-              </div>
-            );
-          })}
-        </div>
+        {tweets.map((element) => {
+          return (
+            <div
+              key={element.id}
+              className="m-3 mx-auto p-0 overflow-auto scrollbar"
+              style={{ width: "22%", height: "25vh", borderRadius: "12px" }}
+            >
+              <Tweet id={element.id} className="p-0"></Tweet>
+            </div>
+          );
+        })}
       </InfiniteScroll>
     </>
   );
