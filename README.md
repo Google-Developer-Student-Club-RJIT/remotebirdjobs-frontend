@@ -1,4 +1,4 @@
-# remotebirdjobs-frontend
+# remotebirdjobs-frontend [![Netlify Status](https://api.netlify.com/api/v1/badges/7c2a9fc9-46a1-4181-84e8-f8d3b98f0056/deploy-status)](https://app.netlify.com/sites/remotebirdjobs/deploys)
 
 <div align="center">
 
