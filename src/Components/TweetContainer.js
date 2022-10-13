@@ -16,13 +16,13 @@ export default function TweetContainer(props) {
     fetch(url, { headers })
       .then((response) => response.json())
       .then((data) => {
+        setHasMore(data.length === 12);
         setTweets((prev) =>
           // removing duplicates
           [...prev, ...data].filter(
             (t, i, arr) => arr.findIndex((v) => v.id === t.id) === i
           )
         );
-        setHasMore(data.length === 12);
       })
       .catch((err) => {
         console.log("Error => ", err);
