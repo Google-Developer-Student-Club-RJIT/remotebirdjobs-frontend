@@ -27,7 +27,7 @@ const Navbar = (props) => {
                             id="Topic"
                             options={topics}
                             sx={{ width: 300 , bgcolor: 'white', padding: '0px', borderRadius: '5px' }}
-                            renderInput={(params) => <TextField {...params} label="Topic" />}
+                            renderInput={(params) => <TextField {...params} />}
                             />
                         </div>
                         <div className="form-group mx-3 row">
