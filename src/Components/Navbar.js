@@ -47,7 +47,7 @@ const Navbar = (props) => {
                             <DatePicker id="Start" className="w-auto form-control col-auto"
                                 name='startDate'
                                 value={form.startDate}
-                                selected={new Date(form.startDate + 'T00:00:00')}
+                                selected={new Date(form.startDate)}
                                 onChange={(date, event) => {
                                     form.startDate = date.toISOString().split('T')[0];
                                     form.name = "startDate"
@@ -59,12 +59,12 @@ const Navbar = (props) => {
                             <DatePicker id="End" className="w-auto form-control col-auto"
                                 name='endDate'
                                 value={form.endDate}
-                                selected={new Date(form.endDate + 'T00:00:00')}
-                                 onChange={(date, event) => {
-                                    form.endDate=date.toISOString().split('T')[0];
-                                    form.name="endDate"
+                                selected={new Date(form.endDate)}
+                                onChange={(date, event) => {
+                                    form.endDate = date.toISOString().split('T')[0];
+                                    form.name = "endDate"
                                     handleForm(event);
-                                 }}/>
+                                }} />
                         </div>
                         {/* <div className="form-group mx-3 my-auto row">
                             <input className="form-check-input w-auto form-control col-auto my-auto " id="checkbox" type="checkbox"
