@@ -16,7 +16,7 @@ const Navbar = (props) => {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <div className="d-flex">
-                        <div className="form-group mx-3 row">
+                        <div className="form-group mx-3">
                             <Autocomplete
                             name='topic'
                             value={value}
