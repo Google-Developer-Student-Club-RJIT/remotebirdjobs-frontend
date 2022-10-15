@@ -1,6 +1,8 @@
 import React from 'react'
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
+import DatePicker from "react-datepicker";
+import 'react-datepicker/dist/react-datepicker.css'
 const Navbar = (props) => {
     let { form, handleForm } = props;
     const topics =['Android','C','CSS','Clojure','Cofeescript','Cpp','Crystal','Django','Elixir','Go','Java','JavaScript','Julia','Kotlin','Linux','MERN','NodeJS','PHP','Powershell','Python','ReactJS','Roslyn','Ruby','Rust','Scala','Spring','Swift','TypeScript']
@@ -40,19 +42,29 @@ const Navbar = (props) => {
                                 <option>false</option>
                             </select>
                         </div>
-                        <div className="form-group mx-3 row">
+                        <div style={{ display: "flex", maxWidth: "200px"}} className="form-group mx-3 row">
                             <label className='w-auto text-white col-auto my-auto' htmlFor="Start">Start Date </label>
-                            <input type="date" id="Start" className="w-auto form-control col-auto my-auto"
+                            <DatePicker id="Start" className="w-auto form-control col-auto"
                                 name='startDate'
                                 value={form.startDate}
-                                onChange={handleForm} />
+                                selected={new Date(form.startDate)}
+                                onChange={(date, event) => {
+                                    form.startDate = date.toISOString().split('T')[0];
+                                    form.name = "startDate"
+                                    handleForm(event);
+                                }} />
                         </div>
-                        <div className="form-group mx-3 row">
+                        <div style={{ display: "flex", maxWidth: "200px"}} className="form-group mx-3 row">
                             <label className='w-auto text-white col-auto my-auto' htmlFor="End">End Date</label>
-                            <input type="date" id="End" className="w-auto form-control col-auto my-auto"
+                            <DatePicker id="End" className="w-auto form-control col-auto"
                                 name='endDate'
                                 value={form.endDate}
-                                onChange={handleForm} />
+                                selected={new Date(form.endDate)}
+                                onChange={(date, event) => {
+                                    form.endDate = date.toISOString().split('T')[0];
+                                    form.name = "endDate"
+                                    handleForm(event);
+                                }} />
                         </div>
                         {/* <div className="form-group mx-3 my-auto row">
                             <input className="form-check-input w-auto form-control col-auto my-auto " id="checkbox" type="checkbox"
