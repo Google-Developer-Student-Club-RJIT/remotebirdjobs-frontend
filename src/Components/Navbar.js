@@ -42,7 +42,7 @@ const Navbar = (props) => {
                                 <option>false</option>
                             </select>
                         </div>
-                        <div className="form-group mx-3 row">
+                        <div style={{ display: "flex", maxWidth: "200px"}} className="form-group mx-3 row">
                             <label className='w-auto text-white col-auto my-auto' htmlFor="Start">Start Date </label>
                             <DatePicker id="Start" className="w-auto form-control col-auto"
                                 name='startDate'
@@ -54,7 +54,7 @@ const Navbar = (props) => {
                                     handleForm(event);
                                 }} />
                         </div>
-                        <div className="form-group mx-3 row">
+                        <div style={{ display: "flex", maxWidth: "200px"}} className="form-group mx-3 row">
                             <label className='w-auto text-white col-auto my-auto' htmlFor="End">End Date</label>
                             <DatePicker id="End" className="w-auto form-control col-auto"
                                 name='endDate'
