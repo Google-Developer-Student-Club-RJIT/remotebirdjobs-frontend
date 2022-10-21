@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import Tweet from "./Tweet";
 import Spinner from "./Spinner";
 import InfiniteScroll from "react-infinite-scroll-component";
-import logo from "../logo.png";
+import "./TweetContainer.css"
 
 export default function TweetContainer(props) {
   let { form } = props;
@@ -41,17 +41,9 @@ export default function TweetContainer(props) {
 
   return (
     <>
-      <div className="text-center">
-        <div className="row d-flex justify-content-center mx-0">
-          <img
-            className="col-auto my-3 mx-0"
-            style={{ borderRadius: "50%", width: "5%" }}
-            src={logo}
-            alt="logo"
-          />
-          <h1 className="col-auto my-3 mx-0 px-0">
-            <u>Tweets</u>
-          </h1>
+      <div>
+        <div className="tweet-box">
+          <h1 className="title">Job Tweets</h1>
         </div>
       </div>
 
