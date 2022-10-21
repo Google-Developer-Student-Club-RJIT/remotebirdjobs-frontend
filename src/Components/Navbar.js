@@ -40,7 +40,7 @@ const Navbar = (props) => {
     "TypeScript",
   ];
   const [value, setValue] = React.useState("ReactJS");
-  const [wvalue, setWvalue] = React.useState("Work from Home");
+  const [wvalue, setWvalue] = React.useState("Work from Office");
   return (
     <div className="container">
       <div className="r0">
@@ -104,7 +104,11 @@ const Navbar = (props) => {
           value={wvalue}
           onChange={(event, newValue) => {
             setWvalue(newValue);
-            form.topic = newValue;
+            if(newValue=="Work from Home"){
+                form.type = true;
+            }else{
+                form.type = false;
+            }
             handleForm(event);
           }}
           disableClearable
