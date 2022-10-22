@@ -144,5 +144,7 @@ div.container{
   }
   .css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root{
     height: 48px !important;
-
+  }
+  .css-xxees4 .MuiAutocomplete-inputRoot .MuiAutocomplete-input{
+      font-weight:600
   }
