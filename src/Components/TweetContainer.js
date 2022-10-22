@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import Tweet from "./Tweet";
 import Spinner from "./Spinner";
 import InfiniteScroll from "react-infinite-scroll-component";
-import logo from "../logo.png";
+import "./TweetContainer.css"
 
 export default function TweetContainer(props) {
   let { form } = props;
@@ -41,17 +41,9 @@ export default function TweetContainer(props) {
 
   return (
     <>
-      <div className="text-center">
-        <div className="row d-flex justify-content-center mx-0">
-          <img
-            className="col-auto my-3 mx-0"
-            style={{ borderRadius: "50%", width: "5%" }}
-            src={logo}
-            alt="logo"
-          />
-          <h1 className="col-auto my-3 mx-0 px-0">
-            <u>Tweets</u>
-          </h1>
+      <div>
+        <div className="title-box">
+          <h1 className="title">Job Tweets</h1>
         </div>
       </div>
 
@@ -72,13 +64,15 @@ export default function TweetContainer(props) {
       >
         {tweets.map((element) => {
           return (
+            <div className="tweet-box">
             <div
               key={element.id}
               className="m-3 mx-auto p-0 overflow-auto scrollbar"
-              style={{ width: "22%", height: "25vh", borderRadius: "12px" }}
+              style={{ width:"100%" ,height: "23.5vh", padding: "0px" }}
             >
               <Tweet id={element.id} className="p-0"></Tweet>
-            </div>
+              </div>
+              </div>
           );
         })}
       </InfiniteScroll>
