@@ -12,7 +12,7 @@
   text-shadow: 3px 3px black;
 }
 
-.tweet-box {
+.title-box {
   box-sizing: border-box;
   align-content: center;
   width: 90%;
@@ -22,4 +22,21 @@
   border-radius: 20px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.tweet-box {
+    box-sizing: border-box;
+    width: 22%;
+    margin: 20px;
+    border: 2px solid #000000;
+    border-radius: 12px;
+    box-shadow: 5px 5px black;
+  }
+  div.m-3.mx-auto.p-0.overflow-auto.scrollbar{
+    margin:0px !important;
+  }
+
+.overflow-auto {
+    overflow: auto!important;
+    border-radius: 12px;
 }

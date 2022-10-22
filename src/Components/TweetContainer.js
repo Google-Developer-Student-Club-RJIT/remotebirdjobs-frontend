@@ -42,7 +42,7 @@ export default function TweetContainer(props) {
   return (
     <>
       <div>
-        <div className="tweet-box">
+        <div className="title-box">
           <h1 className="title">Job Tweets</h1>
         </div>
       </div>
@@ -64,13 +64,15 @@ export default function TweetContainer(props) {
       >
         {tweets.map((element) => {
           return (
+            <div className="tweet-box">
             <div
               key={element.id}
               className="m-3 mx-auto p-0 overflow-auto scrollbar"
-              style={{ width: "22%", height: "25vh", borderRadius: "12px" }}
+              style={{ width:"100%" ,height: "23.5vh", padding: "0px" }}
             >
               <Tweet id={element.id} className="p-0"></Tweet>
-            </div>
+              </div>
+              </div>
           );
         })}
       </InfiniteScroll>
