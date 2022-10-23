@@ -100,12 +100,13 @@ const Navbar = (props) => {
       </div>
       <div className="r3">
         <input
-          type="checkbox"
+          type="radio"
           id="type"
           name="type"
           className="wfh"
           value={!checked}
-          onChange={(event) => {
+          checked={checked}
+          onClick={(event) => {
             if (checked) {
               setChecked(false);
               form.type = false;
