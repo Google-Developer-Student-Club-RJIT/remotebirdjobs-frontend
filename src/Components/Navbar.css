@@ -132,6 +132,10 @@ div.container{
     flex-direction: row;
     flex-wrap: wrap;
 }
+.react-datepicker-popper[data-placement^=bottom] .react-datepicker__triangle {
+    top: 0;
+    margin-top: -8px !important;
+}
   .type{
       float: right;
       font-size: 16px;
