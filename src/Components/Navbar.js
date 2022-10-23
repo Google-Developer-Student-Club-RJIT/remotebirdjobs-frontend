@@ -72,7 +72,7 @@ const Navbar = (props) => {
         />
       </div>
       <div className="r2">
-        <div ><label className="date">Date </label></div>
+        <div ><label className="date">Date Range </label></div>
         <div style={{ maxWidth: "600px", padding: "0px" }}>
           <DatePicker
             id="Start"
