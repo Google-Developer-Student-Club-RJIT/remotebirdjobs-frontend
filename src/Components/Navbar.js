@@ -73,6 +73,7 @@ const Navbar = (props) => {
             name="startDate"
             value={form.startDate}
             selected={new Date(form.startDate)}
+            maxDate={new Date(form.endDate)}
             onChange={(date, event) => {
               form.startDate = date.toISOString().split("T")[0];
               form.name = "startDate";
@@ -88,6 +89,7 @@ const Navbar = (props) => {
             name="endDate"
             value={form.endDate}
             selected={new Date(form.endDate)}
+            minDate={new Date(form.startDate)}
             onChange={(date, event) => {
               form.endDate = date.toISOString().split("T")[0];
               form.name = "endDate";
