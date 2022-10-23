@@ -44,7 +44,6 @@ div.container{
   .topic{
       float: left;
       font-size: 16px;
-      margin-right: 10px;
       font-weight: bold;
   }
   .dropdown{ 
