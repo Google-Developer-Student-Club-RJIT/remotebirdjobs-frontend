@@ -1,0 +1,43 @@
+.title {
+    width: 248px;
+    height: 45px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 45px;
+    line-height: 90px;
+    vertical-align: middle;
+    margin: auto;
+    -webkit-text-stroke: 1px black;
+    color: white;
+    text-shadow: 3px 3px black;
+  }
+  
+  .title-box {
+    box-sizing: border-box;
+    align-content: center;
+    width: 90%;
+    height: 100px;
+    margin-top: 30px;
+    border: 2px dashed #000000;
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .tweet-box {
+      box-sizing: border-box;
+      width: 21%;
+      margin: 20px;
+      border: 2px solid #000000;
+      border-radius: 12px;
+      box-shadow: 5px 5px black;
+    }
+    div.m-3.mx-auto.p-0.overflow-auto.scrollbar{
+      margin:0px !important;
+    }
+  
+  .overflow-auto {
+      overflow: auto!important;
+      border-radius: 12px;
+  }
+ 
