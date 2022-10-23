@@ -10,8 +10,13 @@ div.container{
   
   .container div{
       float: left;
-  }
-  
+}
+.container .r2 .react-datepicker div{
+    float: none !important;
+    padding: 0px !important;
+    margin: 0px !important;
+
+}
   .r0{
       float: left;
       margin-top: 10px;
@@ -59,8 +64,6 @@ div.container{
       margin-right: 10px;
       font-weight: bold;
   }
-  
-  
   
   .start{
       border-top-left-radius: 7px;
@@ -110,9 +113,20 @@ div.container{
       margin-top:10px;
   }
   
-  
-  
-  
+  .react-datepicker__week{
+    padding: 0px !important;
+    margin: 0px !important;
+    height: 40px !important;
+  }
+  .react-datepicker__day-names {
+    height: 45px !important;
+  }
+  .react-datepicker__month{
+    height: 210px !important;
+}
+.react-datepicker__current-month{
+    height:40px;
+}
   .type{
       float: right;
       font-size: 16px;
