@@ -39,7 +39,7 @@ const Navbar = (props) => {
     "TypeScript",
   ];
   const [value, setValue] = React.useState("ReactJS");
-  const [wvalue, setWvalue] = React.useState("Work from Office");
+  const [checked, setChecked] = React.useState(false);
   return (
     <div className="container">
       <div className="r0">
@@ -65,7 +65,9 @@ const Navbar = (props) => {
         />
       </div>
       <div className="r2">
-        <div ><label className="date">Date </label></div>
+        <div>
+          <label className="date">Date </label>
+        </div>
         <div style={{ maxWidth: "200px", padding: "0px" }}>
           <DatePicker
             id="Start"
@@ -97,25 +99,24 @@ const Navbar = (props) => {
         </div>
       </div>
       <div className="r3">
-        <div className="type">Job Type</div>
-        <Autocomplete
+        <input
+          type="checkbox"
+          id="type"
           name="type"
-          value={wvalue}
-          onChange={(event, newValue) => {
-            setWvalue(newValue);
-            if(newValue==="Work from Home"){
-                form.type = true;
-            }else{
-                form.type = false;
+          className="wfh"
+          value={!checked}
+          onChange={(event) => {
+            if (checked) {
+              setChecked(false);
+              form.type = false;
+            } else {
+              setChecked(true);
+              form.type = true;
             }
             handleForm(event);
           }}
-          disableClearable
-          id="type"
-          options={["Work from Home", "Work from Office"]}
-          className="wfh"
-          renderInput={(params) => <TextField {...params} />}
         />
+        Work from Home
       </div>
     </div>
   );

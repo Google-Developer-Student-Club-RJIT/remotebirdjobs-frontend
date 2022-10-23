@@ -39,6 +39,7 @@ div.container{
       float: left;
       margin-top: 10px;
       line-height: 70px;
+      font-weight: bold;
   }
   
   .topic{
@@ -136,23 +137,15 @@ div.container{
     top: 0;
     margin-top: -8px !important;
 }
-  .type{
-      float: right;
+  .wfh{ 
+      width: 30px;
+      height: 30px;
+      vertical-align: middle;
+      text-align: center;
       font-size: 16px;
       margin-right: 10px;
       margin-left: 10px;
-      font-weight: bold;
-  }
-  .wfh{ 
-      float: right;
-      border-radius: 7px;
-      box-sizing: border-box;
-      width: 200px;
-      height: 50px;
-      background: #d9d9d9;
-      padding: 0px;
-      border: 2px solid #000000;
-      margin-top:10px;
+      
   }
   .MuiInputBase-root.MuiOutlinedInput-root.MuiInputBase-colorPrimary.MuiInputBase-fullWidth.MuiInputBase-formControl.MuiInputBase-adornedEnd.MuiAutocomplete-inputRoot.css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root{
       height: 48px;
