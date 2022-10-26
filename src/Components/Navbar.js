@@ -97,6 +97,10 @@ const Navbar = (props) => {
             showMonthDropdown
             showYearDropdown
             dropdownMode="select"
+            dateFormat="dd/MM/yyyy"
+            onKeyDown={(e) => {
+              e.preventDefault();
+           }}
           />
         </div>
       </div>
