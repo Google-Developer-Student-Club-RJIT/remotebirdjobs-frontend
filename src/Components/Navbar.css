@@ -54,7 +54,7 @@ div.container{
       box-sizing: border-box;
       width: 150px;
       background: #d9d9d9;
-      padding: 0px;
+      padding: 0px ;
       border: 2px solid #000000;
       margin-top:10px;
       height: 50px;
@@ -146,9 +146,13 @@ div.container{
       margin-right: 10px;
       margin-left: 10px;
   }
-  .MuiInputBase-root.MuiOutlinedInput-root.MuiInputBase-colorPrimary.MuiInputBase-fullWidth.MuiInputBase-formControl.MuiInputBase-adornedEnd.MuiAutocomplete-inputRoot.css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root{
-      height: 48px;
+  .MuiInputBase-root {
+      height: 49px !important;
+      width: 101.5% !important;
+      top:-1px;
+      left: -1px;
   }
+ 
   .MuiInputBase-input.MuiOutlinedInput-input.MuiInputBase-inputAdornedEnd.MuiAutocomplete-input.MuiAutocomplete-inputFocused.css-nxo287-MuiInputBase-input-MuiOutlinedInput-input{
       padding: 3px;
       font-weight: 600;
