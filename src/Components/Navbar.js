@@ -39,7 +39,6 @@ const Navbar = (props) => {
     "TypeScript",
   ];
   const [value, setValue] = React.useState("ReactJS");
-  const [wvalue, setWvalue] = React.useState("Work from Office");
   const [startDate, setStartDate] = React.useState(new Date(form.startDate));
   const [endDate, setEndDate] = React.useState(new Date(form.endDate));
   const onChange = (dates) => {
