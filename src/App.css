@@ -12,6 +12,10 @@
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 1.5rem;
 }
+.twitter-tweet.twitter-tweet-rendered {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
 
 @media only screen and (max-width:1024px){
   .tweets-wrapper{
