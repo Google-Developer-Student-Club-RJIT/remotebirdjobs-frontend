@@ -80,7 +80,6 @@ const Navbar = (props) => {
             name="startDate"
             selected={startDate}
             onChange={(date, event) => {
-              console.log(date)
               onChange(date)
               form.startDate = date[0].toISOString().split("T")[0];
               if (date[1]) {
