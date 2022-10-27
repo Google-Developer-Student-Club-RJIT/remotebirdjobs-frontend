@@ -60,7 +60,7 @@ export default function TweetContainer(props) {
         }
         loader={<Spinner />}
         id="container"
-        className="d-flex flex-wrap align-items-center justify-content-space-between px-5 col"
+        className="d-flex flex-wrap align-items-center justify-content-center px-5 col"
       >
         {tweets.map((element) => {
           return (
