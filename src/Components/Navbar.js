@@ -39,6 +39,13 @@ const Navbar = (props) => {
     "TypeScript",
   ];
   const [value, setValue] = React.useState("ReactJS");
+  const [startDate, setStartDate] = React.useState(new Date(form.startDate));
+  const [endDate, setEndDate] = React.useState(new Date(form.endDate));
+  const onChange = (dates) => {
+    const [start, end] = dates;
+    setStartDate(start);
+    setEndDate(end);
+  };
   const [checked, setChecked] = React.useState(false);
   return (
     <div className="container">
@@ -65,36 +72,33 @@ const Navbar = (props) => {
         />
       </div>
       <div className="r2">
-        <div>
-          <label className="date">Date </label>
-        </div>
-        <div style={{ maxWidth: "200px", padding: "0px" }}>
+        <div ><label className="date">Date Range </label></div>
+        <div style={{ maxWidth: "600px", padding: "0px" }}>
           <DatePicker
             id="Start"
             className="start"
             name="startDate"
-            value={form.startDate}
-            selected={new Date(form.startDate)}
+            selected={startDate}
             onChange={(date, event) => {
-              form.startDate = date.toISOString().split("T")[0];
-              form.name = "startDate";
-              handleForm(event);
+              onChange(date)
+              form.startDate = date[0].toISOString().split("T")[0];
+              if (date[1]) {
+                form.endDate = date[1].toISOString().split("T")[0];
+                form.name = "endDate";
+                handleForm(event)
+              }
             }}
-          />
-        </div>
-        <div className="to">to</div>
-        <div style={{ maxWidth: "200px", padding: "0px" }}>
-          <DatePicker
-            id="End"
-            className="end"
-            name="endDate"
-            value={form.endDate}
-            selected={new Date(form.endDate)}
-            onChange={(date, event) => {
-              form.endDate = date.toISOString().split("T")[0];
-              form.name = "endDate";
-              handleForm(event);
-            }}
+            startDate={startDate}
+            endDate={endDate}
+            selectsRange
+            showMonthDropdown
+            showYearDropdown
+            dropdownMode="select"
+            dateFormat="dd/MM/yyyy"
+            maxDate={new Date()}
+            onKeyDown={(e) => {
+              e.preventDefault();
+           }}
           />
         </div>
       </div>
