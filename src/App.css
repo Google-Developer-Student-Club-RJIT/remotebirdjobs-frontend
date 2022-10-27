@@ -33,3 +33,9 @@
 body{
   background-color: #efefef !important;
 }
+
+/* remove top and bottom margin from tweets */
+.twitter-tweet.twitter-tweet-rendered {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
