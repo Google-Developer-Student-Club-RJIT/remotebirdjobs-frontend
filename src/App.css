@@ -7,29 +7,33 @@
   scrollbar-width: none;
 }
 
-.tweets-wrapper{
+.tweets-wrapper {
+  border: 2px solid red;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 1.5rem;
 }
-
-@media only screen and (max-width:1024px){
-  .tweets-wrapper{
-     grid-template-columns: repeat(3, 1fr);
-   }
+.align-items-center {
+  justify-content: center;
 }
 
-@media only screen and (max-width:876px){
-  .tweets-wrapper{
-     grid-template-columns: repeat(2, 1fr);
+@media only screen and (max-width: 1024px) {
+  .tweets-wrapper {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
-@media only screen and (max-width:568px){
- .tweets-wrapper{
+
+@media only screen and (max-width: 876px) {
+  .tweets-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (max-width: 568px) {
+  .tweets-wrapper {
     grid-template-columns: repeat(1, 1fr);
   }
 }
 
-body{
+body {
   background-color: #efefef !important;
 }
