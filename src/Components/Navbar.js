@@ -83,8 +83,6 @@ const Navbar = (props) => {
               console.log(date)
               onChange(date)
               form.startDate = date[0].toISOString().split("T")[0];
-              form.name = "startDate";
-              handleForm(event)
               if (date[1]) {
                 form.endDate = date[1].toISOString().split("T")[0];
                 form.name = "endDate";
@@ -98,6 +96,7 @@ const Navbar = (props) => {
             showYearDropdown
             dropdownMode="select"
             dateFormat="dd/MM/yyyy"
+            maxDate={new Date()}
             onKeyDown={(e) => {
               e.preventDefault();
            }}
