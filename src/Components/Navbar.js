@@ -48,7 +48,7 @@ const Navbar = (props) => {
   };
   const [checked, setChecked] = React.useState(false);
   return (
-    <div className="container">
+    <div className="container px-5">
       <div className="r0">
         <a href="/">
           <img src={Logo} alt="" />
