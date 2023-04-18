@@ -12,7 +12,7 @@ export default function TweetContainer(props) {
 
 	const loadTweets = useCallback(async () => {
 		const headers = {'Content-Type': 'application/json'};
-		let url = `https://remotebirdjobs-api.herokuapp.com/search/?search=${form.topic}&start_date=${form.startDate}&end_date=${form.endDate}&page=${page}&wfh=${form.type}&pagesize=12`;
+		let url = `https://remotebirdapi-backend.vercel.app/search/?search=${form.topic}&start_date=${form.startDate}&end_date=${form.endDate}&page=${page}&wfh=${form.type}&pagesize=12`;
 		fetch(url, {headers})
 			.then((response) => response.json())
 			.then((data) => {
